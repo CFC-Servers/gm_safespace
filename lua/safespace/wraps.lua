@@ -1,18 +1,26 @@
 local isstring = isstring
+local rawget = rawget
+local rawset = rawset
+
 local wrap = SafeSpace.wrap
 local filter = SafeSpace.filter
 
--- Chat
-wrap( chat, "AddText", nil, function( args, filter )
-    for i = 1, #args do
-        local arg = args[i]
+local function filterVarArgs( args, filter )
+    local argsCount = #args
+
+    for i = 1, argsCount do
+        local arg = rawget( args, i )
+
         if isstring( arg ) then
-            args[i] = filter( arg )
+            rawset( args, i, filter( arg ) )
         end
     end
 
     return args
-end )
+end
+
+-- Chat
+wrap( chat, "AddText", nil, filterVarArgs )
 
 -- Draw
 local function filterTextData( args, filter )
@@ -25,13 +33,21 @@ wrap( draw, "SimpleTextOutlined" )
 wrap( draw, "Text", nil, filterTextData )
 wrap( draw, "TextShadow", nil, filterTextData )
 
--- Panel
-local panelMeta = FindMetaTable( "Panel" )
-wrap( panelMeta, "SetText", 2 )
-wrap( panelMeta, "AppendText", 2 )
-wrap( panelMeta, "GWEN_SetText", 2 )
-
 -- Surface
 wrap( surface, "GetTextSize" )
 wrap( surface, "DrawText" )
 
+-- Notification
+wrap( notification, "AddLegacy" )
+
+-- Debugoverlay
+wrap( debugoverlay, "Text", 2 )
+wrap( debugoverlay, "ScreenText", 3 )
+wrap( debugoverlay, "EntityTextAtPosition", 3 )
+
+-- Builtin
+wrap( _G, "print", nil, filterVarArgs )
+wrap( _G, "Msg", nil, filterVarArgs )
+wrap( _G, "MsgAll", nil, filterVarArgs )
+wrap( _G, "MsgC", nil, filterVarArgs )
+wrap( _G, "MsgN", nil, filterVarArgs )
