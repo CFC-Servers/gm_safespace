@@ -22,17 +22,6 @@ end
 -- Chat
 wrap( chat, "AddText", nil, filterVarArgs )
 
--- Draw
-local function filterTextData( args, filter )
-    args[1].text = filter( args[1].text )
-    return args
-end
-wrap( draw, "DrawText" )
-wrap( draw, "SimpleText" )
-wrap( draw, "SimpleTextOutlined" )
-wrap( draw, "Text", nil, filterTextData )
-wrap( draw, "TextShadow", nil, filterTextData )
-
 -- Surface
 wrap( surface, "GetTextSize" )
 wrap( surface, "DrawText" )
