@@ -15,3 +15,15 @@ Makes Gmod a safe space by leveraging Steam's Filtering on literally everything
 ![image](https://user-images.githubusercontent.com/7936439/153526532-10607bfd-c88e-43cc-bf4e-90ee911bc354.png)
 
 ![image](https://user-images.githubusercontent.com/7936439/153526565-12534269-9f1e-4597-8861-60bbf9e215a6.png)
+
+
+## Chat prints
+![gmod_pDpkd3DV33](https://user-images.githubusercontent.com/7936439/158306758-b687e70c-f574-4ec2-84ef-417dfbcc7aea.png)
+
+
+## Expression 2
+https://user-images.githubusercontent.com/7936439/158306716-e4bfbe7f-c719-4c83-a241-c9004d9eb667.mp4
+
+
+## Even console prints!
+https://user-images.githubusercontent.com/7936439/158306734-caeb73af-3762-4f72-b6f8-705c70793dc0.mp4
