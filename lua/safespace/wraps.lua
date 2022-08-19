@@ -4,7 +4,7 @@ local isstring = isstring
 local wrap = SafeSpace.wrap
 
 local isEnabled = CreateClientConVar( "safespace_enabled", 1, true, false, "Enable/Disable SafeSpace", 0, 1 ):GetBool()
-convar.AddChangeCallback( "safespace_enabled", function( _, _, new )
+cvars.AddChangeCallback( "safespace_enabled", function( _, _, new )
     isEnabled = tobool( new )
 end, "UpdateLocalValue" )
 
