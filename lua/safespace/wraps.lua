@@ -3,14 +3,7 @@ local rawset = rawset
 local isstring = isstring
 local wrap = SafeSpace.wrap
 
-local isEnabled = CreateClientConVar( "safespace_enabled", 1, true, false, "Enable/Disable SafeSpace", 0, 1 ):GetBool()
-cvars.AddChangeCallback( "safespace_enabled", function( _, _, new )
-    isEnabled = tobool( new )
-end, "UpdateLocalValue" )
-
 local function filterVarArgs( args, filter )
-    if not isEnabled then return args end
-
     local argsCount = #args
 
     for i = 1, argsCount do
