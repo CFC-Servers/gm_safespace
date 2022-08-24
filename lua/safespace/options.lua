@@ -5,9 +5,9 @@ local populatePanel = function( panel )
 end
 
 hook.Add( "AddToolMenuCategories", "SafeSpace_SettingsManager", function()
-    spawnmenu.AddToolCategory( "Options", "CFC", "CFC" )
+    spawnmenu.AddToolCategory( "Options", "CFC", "#CFC" )
 end )
 
 hook.Add( "PopulateToolMenu", "SafeSpace_SettingsManager", function()
-    spawnmenu.AddToolMenuOption( "Options", "CFC", "safespace_is_enabled", "Profanity Filtering", "", "", populatePanel )
+    spawnmenu.AddToolMenuOption( "Options", "CFC", "safespace_is_enabled", "#Profanity Filtering", "", "", populatePanel )
 end )
