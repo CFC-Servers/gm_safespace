@@ -1,7 +1,7 @@
 local populatePanel = function( panel )
     panel:Help( "Text Profanity Filtering uses your Steam Profanity settings and attempts to filter all in-game text content" )
     panel:Help( "This Check Box will enable/disable Profanity Filtering regardless of what Steam Settings you have selected" )
-    panel:CheckBox( "Enable Text Profanity Filtering", "safespace_enabled" )
+    panel:CheckBox( "Enable Text Profanity Filtering", "gm_safespace_enabled" )
 end
 
 hook.Add( "AddToolMenuCategories", "SafeSpace_SettingsManager", function()

@@ -29,8 +29,8 @@ local function filter( text )
     return result
 end
 
-local isEnabled = CreateClientConVar( "safespace_enabled", 1, true, false, "Enable/Disable SafeSpace", 0, 1 ):GetBool()
-cvars.AddChangeCallback( "safespace_enabled", function( _, _, new )
+local isEnabled = CreateClientConVar( "gm_safespace_enabled", 0, true, false, "Enable/Disable SafeSpace", 0, 1 ):GetBool()
+cvars.AddChangeCallback( "gm_safespace_enabled", function( _, _, new )
     isEnabled = tobool( new )
     SafeSpace.Cache = {}
 end, "UpdateLocalValue" )
